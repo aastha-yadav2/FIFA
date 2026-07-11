@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "dashboard":    "Dashboard",
+    "aiAssistant":  "AI Assistant",
+    "navigation":   "Navigation",
+    "crowdMonitor": "Crowd Monitor",
+    "accessibility":"Accessibility",
+    "transportation":"Transportation",
+    "sustainability":"Sustainability",
+    "volunteers":   "Volunteers",
+    "incidents":    "Incidents",
+    "analytics":    "Analytics",
+    "settings":     "Settings"
+  },
+  "topbar": {
+    "liveOps":   "Live Operations",
+    "security":  "Security",
+    "refresh":   "Refresh",
+    "search":    "Search"
+  },
+  "dashboard": {
+    "title":     "Operations Dashboard",
+    "sub":       "FIFA World Cup 2026 · Live",
+    "kpi": {
+      "fans":      "Total Fans Today",
+      "density":   "Crowd Density",
+      "volunteers":"Active Volunteers",
+      "alerts":    "Active Alerts",
+      "queue":     "Avg Queue Time",
+      "sustain":   "Sustainability Score"
+    },
+    "hourlyEntry":    "Hourly Fan Entry",
+    "crowdDensity":   "Crowd Density Trends",
+    "liveActivity":   "Live Activity Feed",
+    "zoneStatus":     "Zone Status Overview"
+  },
+  "crowd": {
+    "title":     "Crowd Monitoring",
+    "sub":       "Real-time crowd density tracking across all stadium zones",
+    "heatmap":   "Live Density Heatmap",
+    "queueTimes":"Gate Queue Times",
+    "zoneDetail":"Zone Occupancy Details"
+  },
+  "ai": {
+    "title":     "StadiumMind AI Assistant",
+    "sub":       "Powered by Gemini AI · Real-time stadium intelligence",
+    "placeholder":"Ask about crowd density, incidents, sustainability, volunteers…",
+    "clear":     "Clear Chat",
+    "suggested": "Suggested questions",
+    "geminiLive":"Gemini AI · Live Context",
+    "mockMode":  "Demo Mode · Add VITE_GEMINI_API_KEY for live AI"
+  },
+  "settings": {
+    "title":       "Settings",
+    "sub":         "Account preferences and platform configuration",
+    "profile":     "Profile",
+    "notifications":"Notification Preferences",
+    "language":    "Language & Appearance",
+    "actions":     "Account Actions",
+    "save":        "Save Changes",
+    "saved":       "Saved!",
+    "signOut":     "Sign Out",
+    "interfaceLang":"Interface Language",
+    "theme":       "Theme"
+  },
+  "common": {
+    "live":     "Live",
+    "critical": "Critical",
+    "warning":  "Warning",
+    "normal":   "Normal",
+    "low":      "Low",
+    "loading":  "Loading…",
+    "noData":   "No data available"
+  }
+}

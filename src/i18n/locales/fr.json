@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "dashboard":    "Tableau de bord",
+    "aiAssistant":  "Assistant IA",
+    "navigation":   "Navigation",
+    "crowdMonitor": "Contrôle des foules",
+    "accessibility":"Accessibilité",
+    "transportation":"Transport",
+    "sustainability":"Durabilité",
+    "volunteers":   "Bénévoles",
+    "incidents":    "Incidents",
+    "analytics":    "Analytique",
+    "settings":     "Paramètres"
+  },
+  "topbar": {
+    "liveOps":   "Opérations en direct",
+    "security":  "Sécurité",
+    "refresh":   "Actualiser",
+    "search":    "Rechercher"
+  },
+  "dashboard": {
+    "title":     "Tableau de bord opérationnel",
+    "sub":       "FIFA Coupe du Monde 2026 · En direct",
+    "kpi": {
+      "fans":      "Total fans aujourd'hui",
+      "density":   "Densité de la foule",
+      "volunteers":"Bénévoles actifs",
+      "alerts":    "Alertes actives",
+      "queue":     "Temps d'attente moyen",
+      "sustain":   "Score de durabilité"
+    },
+    "hourlyEntry":    "Entrées des fans par heure",
+    "crowdDensity":   "Tendances de densité des foules",
+    "liveActivity":   "Flux d'activité en direct",
+    "zoneStatus":     "Statut des zones"
+  },
+  "crowd": {
+    "title":     "Contrôle des foules",
+    "sub":       "Suivi de densité en temps réel dans toutes les zones",
+    "heatmap":   "Carte thermique en direct",
+    "queueTimes":"Temps d'attente aux portes",
+    "zoneDetail":"Détails d'occupation par zone"
+  },
+  "ai": {
+    "title":     "Assistant IA StadiumMind",
+    "sub":       "Propulsé par Gemini AI · Intelligence stade en temps réel",
+    "placeholder":"Posez des questions sur la densité, les incidents, la durabilité…",
+    "clear":     "Effacer la conversation",
+    "suggested": "Questions suggérées",
+    "geminiLive":"Gemini AI · Contexte en direct",
+    "mockMode":  "Mode démo · Ajoutez VITE_GEMINI_API_KEY pour l'IA réelle"
+  },
+  "settings": {
+    "title":       "Paramètres",
+    "sub":         "Préférences du compte et configuration de la plateforme",
+    "profile":     "Profil",
+    "notifications":"Préférences de notifications",
+    "language":    "Langue et apparence",
+    "actions":     "Actions du compte",
+    "save":        "Sauvegarder",
+    "saved":       "Sauvegardé!",
+    "signOut":     "Se déconnecter",
+    "interfaceLang":"Langue de l'interface",
+    "theme":       "Thème"
+  },
+  "common": {
+    "live":     "En direct",
+    "critical": "Critique",
+    "warning":  "Avertissement",
+    "normal":   "Normal",
+    "low":      "Faible",
+    "loading":  "Chargement…",
+    "noData":   "Aucune donnée disponible"
+  }
+}

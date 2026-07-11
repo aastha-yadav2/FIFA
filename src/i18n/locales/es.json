@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "dashboard":    "Panel de control",
+    "aiAssistant":  "Asistente IA",
+    "navigation":   "Navegación",
+    "crowdMonitor": "Control de multitud",
+    "accessibility":"Accesibilidad",
+    "transportation":"Transporte",
+    "sustainability":"Sostenibilidad",
+    "volunteers":   "Voluntarios",
+    "incidents":    "Incidentes",
+    "analytics":    "Análisis",
+    "settings":     "Configuración"
+  },
+  "topbar": {
+    "liveOps":   "Operaciones en vivo",
+    "security":  "Seguridad",
+    "refresh":   "Actualizar",
+    "search":    "Buscar"
+  },
+  "dashboard": {
+    "title":     "Panel de Operaciones",
+    "sub":       "FIFA Copa del Mundo 2026 · En vivo",
+    "kpi": {
+      "fans":      "Total de aficionados hoy",
+      "density":   "Densidad de multitud",
+      "volunteers":"Voluntarios activos",
+      "alerts":    "Alertas activas",
+      "queue":     "Tiempo medio de espera",
+      "sustain":   "Puntuación de sostenibilidad"
+    },
+    "hourlyEntry":    "Entrada de aficionados por hora",
+    "crowdDensity":   "Tendencias de densidad de multitud",
+    "liveActivity":   "Feed de actividad en vivo",
+    "zoneStatus":     "Estado de zonas"
+  },
+  "crowd": {
+    "title":     "Control de multitud",
+    "sub":       "Seguimiento de densidad en tiempo real en todas las zonas",
+    "heatmap":   "Mapa de calor en vivo",
+    "queueTimes":"Tiempos de espera en puertas",
+    "zoneDetail":"Detalles de ocupación por zona"
+  },
+  "ai": {
+    "title":     "Asistente IA StadiumMind",
+    "sub":       "Impulsado por Gemini AI · Inteligencia estadio en tiempo real",
+    "placeholder":"Pregunta sobre densidad, incidentes, sostenibilidad…",
+    "clear":     "Borrar chat",
+    "suggested": "Preguntas sugeridas",
+    "geminiLive":"Gemini AI · Contexto en vivo",
+    "mockMode":  "Modo demo · Añada VITE_GEMINI_API_KEY para IA real"
+  },
+  "settings": {
+    "title":       "Configuración",
+    "sub":         "Preferencias de cuenta y configuración de plataforma",
+    "profile":     "Perfil",
+    "notifications":"Preferencias de notificaciones",
+    "language":    "Idioma y apariencia",
+    "actions":     "Acciones de cuenta",
+    "save":        "Guardar cambios",
+    "saved":       "¡Guardado!",
+    "signOut":     "Cerrar sesión",
+    "interfaceLang":"Idioma de la interfaz",
+    "theme":       "Tema"
+  },
+  "common": {
+    "live":     "En vivo",
+    "critical": "Crítico",
+    "warning":  "Aviso",
+    "normal":   "Normal",
+    "low":      "Bajo",
+    "loading":  "Cargando…",
+    "noData":   "Sin datos disponibles"
+  }
+}
