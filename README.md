@@ -1,21 +1,48 @@
 # StadiumMind AI 🏟️🤖
-**Intelligent Operations Center for FIFA World Cup 2026**
 
-StadiumMind AI is a real-time, AI-powered dashboard designed to manage massive crowd operations, incident reporting, and sustainability metrics for live events. Built with React, Vite, Firebase, and Google Gemini AI, this platform gives operations managers and security officers a comprehensive, live view of stadium telemetry.
+<!-- Add your Shields.io badges here -->
+![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react)
+![Vite](https://img.shields.io/badge/Vite-5.0.0-646CFF?logo=vite)
+![Firebase](https://img.shields.io/badge/Firebase-10.7.0-FFCA28?logo=firebase)
+![Gemini AI](https://img.shields.io/badge/Gemini_AI-1.5_Flash-8E75B2?logo=google)
 
-## Features ✨
-- **Live Telemetry Dashboard:** Real-time monitoring of gate queues, zone occupancy, and transportation statuses.
-- **Role-Based Access Control:** Distinct views and permissions for Operations Managers, Security Officers, and Volunteers.
-- **Firebase Backend:** Fully integrated with Firebase Authentication and Cloud Firestore for real-time, multi-user syncing of incidents and assignments.
-- **Gemini AI Assistant:** A context-aware chatbot that reads live stadium data, predicts crowd surges, and can automatically execute tools (like dispatching volunteers or logging incidents) via natural language commands.
-- **Graceful Simulation Engine:** If the live database is empty, the app falls back to an internal simulation engine that drifts data dynamically, making it perfect for demonstrations.
+An intelligent, real-time operations center designed to manage massive crowd operations, incident reporting, and sustainability metrics for the FIFA World Cup 2026.
 
-## Tech Stack 🛠️
+🔗 **[Live Demo Link](https://fifa-aa217.firebaseapp.com)** *(Note: Add live link here once deployed)*
+
+---
+
+## 📸 Screenshots & Demos
+
+| Desktop View | Mobile View |
+|---|---|
+| ![Desktop Screenshot](https://via.placeholder.com/800x450.png?text=Dashboard+Desktop+View) | ![Mobile Screenshot](https://via.placeholder.com/400x450.png?text=Dashboard+Mobile+View) |
+
+*Insert a GIF here showing your application in action if possible.*
+
+---
+
+## 🛠️ Tech Stack
+
 - **Frontend:** React 18, Vite, React Router, Lucide Icons, Chart.js
-- **Backend as a Service:** Firebase (Auth, Firestore, Analytics)
+- **Backend as a Service:** Firebase (Auth, Cloud Firestore)
 - **AI Model:** Google Gemini (`gemini-1.5-flash`) via `@google/generative-ai`
+- **Hosting/Deployment:** Firebase Hosting
 
-## Project Structure 📂
+---
+
+## ✨ Features
+
+- 🚀 **Live Telemetry Dashboard:** Real-time monitoring of gate queues, zone occupancy, and transportation statuses.
+- 🔒 **Role-Based Access Control:** Distinct views and permissions for Operations Managers, Security Officers, and Volunteers.
+- 🎨 **Firebase Backend:** Fully integrated with Firebase Auth and Firestore for real-time, multi-user syncing of incidents and assignments.
+- 🤖 **Gemini AI Assistant:** A context-aware chatbot that reads live stadium data and can automatically dispatch volunteers or log incidents.
+- 📱 **Graceful Simulation Engine:** Falls back to a dynamic local simulation engine if the live database is empty, perfect for demos.
+
+---
+
+## 📂 Project Structure
+
 ```text
 FIFA/
 ├── src/
@@ -37,43 +64,105 @@ FIFA/
 └── vite.config.js       # Vite configuration
 ```
 
-## Getting Started 🚀
+---
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/aastha-yadav2/FIFA.git
-cd FIFA
-```
+## ⚙️ Getting Started
 
-### 2. Install dependencies
-```bash
-npm install
-```
+Follow these steps to set up the project locally on your machine.
 
-### 3. Environment Variables
-Create a `.env` file in the root directory and add your Google Gemini API Key (you can use `.env.example` as a template):
+### Prerequisites
+
+List the software versions required before running this project:
+- Node.js (v18.0.0 or higher)
+- npm (v9.0.0 or higher)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/aastha-yadav2/FIFA.git
+   cd FIFA
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+---
+
+## 🔑 Environment Variables
+
+To run this project, you will need to add the following environment variables to your `.env` file in the root directory:
+
 ```env
 VITE_GEMINI_API_KEY=your_gemini_api_key_here
 ```
-*(Get a free API key from [Google AI Studio](https://aistudio.google.com/app/apikey))*
 
-### 4. Firebase Setup
-The project is already configured to use a specific Firebase project. However, if you are setting this up from scratch:
-1. Ensure you have enabled **Google Sign-In** and **Email/Password** authentication in your Firebase Console.
-2. Enable **Cloud Firestore** and set your security rules to allow authenticated read/writes.
+---
 
-### 5. Run the Development Server
+## 🚀 Usage
+
+Commands to run the application in different environments:
+
+**Development Mode:**
 ```bash
 npm run dev
 ```
-Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## Deployment 🌐
-To deploy to Firebase Hosting:
+**Production Mode:**
 ```bash
 npm run build
 firebase deploy
 ```
 
-## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+---
+
+## 🧪 Running Tests
+
+*(If automated tests like Jest/Vitest are added in the future, run them using: `npm run test`)*
+
+For manual scoring and validation criteria, please refer to the detailed [TESTING.md](./TESTING.md) guide.
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Initial release with core telemetry features
+- [x] Integrate Firebase Authentication & Cloud Firestore
+- [x] Implement Google Gemini AI Assistant with Tool Calling
+- [ ] Add automated CI/CD pipelines
+- [ ] Integrate live IoT sensors for real-world gate telemetry
+
+---
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## ✍️ Authors & Acknowledgments
+
+- **Aastha Yadav** - *Initial work* - [@aastha-yadav2](https://github.com/aastha-yadav2)
+- Thanks to Google Gemini and Firebase for powering the real-time infrastructure.
+
+---
+
+## ✉️ Contact / Support
+
+Aastha Yadav - [@aastha-yadav2](https://github.com/aastha-yadav2)
+
+Project Link: [https://github.com/aastha-yadav2/FIFA](https://github.com/aastha-yadav2/FIFA)
