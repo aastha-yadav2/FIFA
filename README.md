@@ -15,6 +15,28 @@ StadiumMind AI is a real-time, AI-powered dashboard designed to manage massive c
 - **Backend as a Service:** Firebase (Auth, Firestore, Analytics)
 - **AI Model:** Google Gemini (`gemini-1.5-flash`) via `@google/generative-ai`
 
+## Project Structure 📂
+```text
+FIFA/
+├── src/
+│   ├── components/      # Reusable UI elements (Sidebar, TopBar, Cards)
+│   ├── context/         # React Contexts (Auth, Operations, RealTime)
+│   ├── data/            # Mock data and seed data
+│   ├── i18n/            # Internationalization setup and locales
+│   ├── lib/             # Utilities (Gemini API logic, tool handlers)
+│   ├── pages/           # Application views (Dashboard, Login, AIAssistant, etc.)
+│   ├── App.jsx          # Main application routing
+│   ├── firebase.js      # Firebase SDK initialization
+│   ├── index.css        # Global CSS and custom design tokens
+│   └── main.jsx         # React DOM entry point
+├── .env.example         # Environment variable template
+├── index.html           # Vite HTML entry point
+├── package.json         # Project metadata and dependencies
+├── PRD.md               # Product Requirements Document
+├── TESTING.md           # Testing and scoring guide
+└── vite.config.js       # Vite configuration
+```
+
 ## Getting Started 🚀
 
 ### 1. Clone the repository
