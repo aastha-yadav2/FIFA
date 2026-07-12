@@ -118,6 +118,33 @@ firebase deploy
 
 ---
 
+## ☁️ Deployment
+
+### Google Cloud Run
+
+This project includes Docker configuration to deploy the Vite application using Nginx on Google Cloud Run.
+
+1. **Build the Docker Image:**
+   ```bash
+   docker build -t gcr.io/your-project-id/stadiummind-app .
+   ```
+
+2. **Push the Image to Container Registry:**
+   ```bash
+   docker push gcr.io/your-project-id/stadiummind-app
+   ```
+
+3. **Deploy to Cloud Run:**
+   ```bash
+   gcloud run deploy stadiummind-app \
+     --image gcr.io/your-project-id/stadiummind-app \
+     --platform managed \
+     --allow-unauthenticated
+   ```
+*(Note: Replace `your-project-id` with your actual Google Cloud Project ID.)*
+
+---
+
 ## 🧪 Running Tests
 
 *(If automated tests like Jest/Vitest are added in the future, run them using: `npm run test`)*
