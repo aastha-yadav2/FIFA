@@ -90,6 +90,18 @@
   --topbar-height:     64px;
 }
 
+[data-theme="dark"] {
+  --bg:               #0A1628;
+  --surface:          #112240;
+  --surface-variant:  #1A2E4A;
+  --surface-dim:      #233554;
+  --text-primary:     #E2E8F0;
+  --text-secondary:   #94A3B8;
+  --border:           #233554;
+  --border-strong:    #334155;
+  --primary-surface:  rgba(30,136,229,0.15);
+}
+
 /* ---------- Reset ---------- */
 *, *::before, *::after {
   box-sizing: border-box;

@@ -13,7 +13,17 @@ export default function Settings() {
   });
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState(i18n.language || 'en');
-  const [theme, setTheme]       = useState('light');
+  const [theme, setTheme]       = useState(localStorage.getItem('theme') || 'light');
+
+  const handleThemeChange = (newTheme) => {
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    if (newTheme === 'dark' || (newTheme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  };
   const [saved, setSaved]       = useState(false);
 
   const handleSave = () => {
@@ -162,7 +172,7 @@ export default function Settings() {
                   <button
                     key={t}
                     className={`settings-theme-btn ${theme === t ? 'settings-theme-btn--active' : ''}`}
-                    onClick={() => setTheme(t)}
+                    onClick={() => handleThemeChange(t)}
                     id={`btn-theme-${t}`}
                   >
                     {t === 'light' ? '☀️' : t === 'dark' ? '🌙' : '🖥️'} {t.charAt(0).toUpperCase() + t.slice(1)}
