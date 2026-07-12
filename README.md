@@ -120,28 +120,19 @@ firebase deploy
 
 ## ☁️ Deployment
 
-### Google Cloud Run
+### Vercel
 
-This project includes Docker configuration to deploy the Vite application using Nginx on Google Cloud Run.
+This project is configured for seamless deployment to Vercel. The `vercel.json` file ensures that React Router SPA routing works correctly.
 
-1. **Build the Docker Image:**
+1. **Deploy using the Vercel CLI:**
    ```bash
-   docker build -t gcr.io/your-project-id/stadiummind-app .
+   npx vercel --prod
    ```
 
-2. **Push the Image to Container Registry:**
-   ```bash
-   docker push gcr.io/your-project-id/stadiummind-app
-   ```
-
-3. **Deploy to Cloud Run:**
-   ```bash
-   gcloud run deploy stadiummind-app \
-     --image gcr.io/your-project-id/stadiummind-app \
-     --platform managed \
-     --allow-unauthenticated
-   ```
-*(Note: Replace `your-project-id` with your actual Google Cloud Project ID.)*
+2. **Follow the Prompts:** 
+   - Log in if prompted.
+   - Link the project to your Vercel account.
+   - Keep default build settings (Vite is automatically detected).
 
 ---
 
