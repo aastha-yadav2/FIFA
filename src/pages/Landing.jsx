@@ -111,32 +111,175 @@ export default function Landing() {
           </div>
         </div>
 
-        <div className="landing__hero-visual animate-float">
-          <div className="landing__hero-card glass-dark">
-            <div className="landing__hero-card-header">
-              <span className="status-dot online" />
-              <span>Live Operations · Match Day 6</span>
-              <span style={{ marginLeft: 'auto', fontSize: '0.75rem', opacity: 0.6 }}>21:30 EST</span>
-            </div>
-            {[
-              { label: 'Total Fans', value: '68,420', bar: 73, color: '#1E88E5' },
-              { label: 'Crowd Density', value: '73%', bar: 73, color: '#F57F17' },
-              { label: 'Safety Score', value: '96/100', bar: 96, color: '#43A047' },
-            ].map(item => (
-              <div key={item.label} className="landing__hero-metric">
-                <div className="landing__hero-metric-row">
-                  <span style={{ fontSize: '0.8rem', color: '#90CAF9' }}>{item.label}</span>
-                  <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#fff' }}>{item.value}</span>
+        <div className="landing__hero-visual">
+          <div className="stadium-3d-wrapper">
+            {/* Ambient glow behind stadium */}
+            <div className="stadium-ambient-glow" />
+            
+            {/* 3D Stadium Scene */}
+            <div className="stadium-3d-scene">
+              <div className="stadium-3d-container">
+                {/* Stadium Base / Foundation */}
+                <div className="stadium-base" />
+                
+                {/* Stadium Field */}
+                <div className="stadium-field">
+                  <div className="stadium-field-lines" />
+                  <div className="stadium-field-center-circle" />
+                  <div className="stadium-field-center-line" />
+                  <div className="stadium-field-penalty-left" />
+                  <div className="stadium-field-penalty-right" />
                 </div>
-                <div className="progress-bar" style={{ background: 'rgba(255,255,255,0.1)', marginTop: 6 }}>
-                  <div className="progress-fill" style={{ width: `${item.bar}%`, background: item.color }} />
+                
+                {/* Stadium Stands */}
+                <div className="stadium-stand stadium-stand--north">
+                  <div className="stand-crowd">
+                    {Array.from({ length: 40 }).map((_, i) => (
+                      <div key={`n${i}`} className="crowd-dot" style={{ 
+                        left: `${5 + (i % 10) * 10}%`, 
+                        top: `${15 + Math.floor(i / 10) * 22}%`,
+                        animationDelay: `${i * 0.15}s`,
+                        background: ['#1E88E5', '#F57F17', '#43A047', '#E53935', '#00ACC1'][i % 5]
+                      }} />
+                    ))}
+                  </div>
+                </div>
+                <div className="stadium-stand stadium-stand--south">
+                  <div className="stand-crowd">
+                    {Array.from({ length: 40 }).map((_, i) => (
+                      <div key={`s${i}`} className="crowd-dot" style={{ 
+                        left: `${5 + (i % 10) * 10}%`, 
+                        top: `${15 + Math.floor(i / 10) * 22}%`,
+                        animationDelay: `${i * 0.12 + 0.5}s`,
+                        background: ['#E53935', '#1E88E5', '#F57F17', '#00ACC1', '#43A047'][i % 5]
+                      }} />
+                    ))}
+                  </div>
+                </div>
+                <div className="stadium-stand stadium-stand--east">
+                  <div className="stand-crowd">
+                    {Array.from({ length: 20 }).map((_, i) => (
+                      <div key={`e${i}`} className="crowd-dot" style={{ 
+                        left: `${10 + (i % 5) * 18}%`, 
+                        top: `${15 + Math.floor(i / 5) * 22}%`,
+                        animationDelay: `${i * 0.18 + 0.3}s`,
+                        background: ['#43A047', '#E53935', '#1E88E5', '#F57F17', '#00ACC1'][i % 5]
+                      }} />
+                    ))}
+                  </div>
+                </div>
+                <div className="stadium-stand stadium-stand--west">
+                  <div className="stand-crowd">
+                    {Array.from({ length: 20 }).map((_, i) => (
+                      <div key={`w${i}`} className="crowd-dot" style={{ 
+                        left: `${10 + (i % 5) * 18}%`, 
+                        top: `${15 + Math.floor(i / 5) * 22}%`,
+                        animationDelay: `${i * 0.14 + 0.7}s`,
+                        background: ['#00ACC1', '#43A047', '#F57F17', '#1E88E5', '#E53935'][i % 5]
+                      }} />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Stadium Roof Ring */}
+                <div className="stadium-roof" />
+
+                {/* Floodlights */}
+                <div className="floodlight floodlight--1">
+                  <div className="floodlight-pole" />
+                  <div className="floodlight-beam" />
+                </div>
+                <div className="floodlight floodlight--2">
+                  <div className="floodlight-pole" />
+                  <div className="floodlight-beam" />
+                </div>
+                <div className="floodlight floodlight--3">
+                  <div className="floodlight-pole" />
+                  <div className="floodlight-beam" />
+                </div>
+                <div className="floodlight floodlight--4">
+                  <div className="floodlight-pole" />
+                  <div className="floodlight-beam" />
+                </div>
+
+                {/* Scanning laser line */}
+                <div className="stadium-scan-line" />
+              </div>
+            </div>
+
+            {/* Floating Holographic Panels */}
+            <div className="holo-panel holo-panel--header">
+              <div className="holo-panel-glow" />
+              <div className="holo-panel-content">
+                <div className="holo-status-row">
+                  <span className="holo-status-dot" />
+                  <span className="holo-status-text">Live Operations · Match Day 6</span>
+                </div>
+                <span className="holo-time">21:30 EST</span>
+              </div>
+            </div>
+
+            <div className="holo-panel holo-panel--fans">
+              <div className="holo-panel-glow" />
+              <div className="holo-panel-content">
+                <div className="holo-metric-label">Total Fans</div>
+                <div className="holo-metric-value holo-metric-value--blue">68,420</div>
+                <div className="holo-bar">
+                  <div className="holo-bar-fill holo-bar-fill--blue" style={{ width: '73%' }} />
                 </div>
               </div>
-            ))}
-            <div className="landing__hero-alert">
-              <span>🚨</span>
-              <span style={{ fontSize: '0.75rem', color: '#EF9A9A' }}>Gate C density critical — AI rerouting active</span>
             </div>
+
+            <div className="holo-panel holo-panel--density">
+              <div className="holo-panel-glow" />
+              <div className="holo-panel-content">
+                <div className="holo-metric-label">Crowd Density</div>
+                <div className="holo-metric-value holo-metric-value--amber">73%</div>
+                <div className="holo-bar">
+                  <div className="holo-bar-fill holo-bar-fill--amber" style={{ width: '73%' }} />
+                </div>
+              </div>
+            </div>
+
+            <div className="holo-panel holo-panel--safety">
+              <div className="holo-panel-glow" />
+              <div className="holo-panel-content">
+                <div className="holo-metric-label">Safety Score</div>
+                <div className="holo-metric-value holo-metric-value--green">96/100</div>
+                <div className="holo-bar">
+                  <div className="holo-bar-fill holo-bar-fill--green" style={{ width: '96%' }} />
+                </div>
+              </div>
+            </div>
+
+            <div className="holo-panel holo-panel--alert">
+              <div className="holo-panel-glow holo-panel-glow--alert" />
+              <div className="holo-panel-content holo-alert-content">
+                <span className="holo-alert-icon">🚨</span>
+                <span className="holo-alert-text">Gate C density critical — AI rerouting active</span>
+              </div>
+            </div>
+
+            {/* Floating particles */}
+            {Array.from({ length: 15 }).map((_, i) => (
+              <div key={`p${i}`} className="stadium-particle" style={{
+                left: `${10 + Math.random() * 80}%`,
+                top: `${10 + Math.random() * 80}%`,
+                animationDelay: `${i * 0.4}s`,
+                animationDuration: `${3 + Math.random() * 4}s`,
+                width: `${2 + Math.random() * 3}px`,
+                height: `${2 + Math.random() * 3}px`,
+              }} />
+            ))}
+
+            {/* Connection lines from panels to stadium */}
+            <svg className="holo-connections" viewBox="0 0 600 500" preserveAspectRatio="none">
+              <line x1="170" y1="55" x2="300" y2="200" className="holo-line" />
+              <line x1="50" y1="190" x2="220" y2="250" className="holo-line" />
+              <line x1="500" y1="160" x2="380" y2="230" className="holo-line" />
+              <line x1="480" y1="300" x2="370" y2="280" className="holo-line" />
+              <line x1="250" y1="420" x2="300" y2="320" className="holo-line holo-line--alert" />
+            </svg>
           </div>
         </div>
       </section>
@@ -346,45 +489,573 @@ export default function Landing() {
           color: #94A3B8;
         }
 
-        /* HERO VISUAL */
+        /* HERO VISUAL — 3D Stadium */
         .landing__hero-visual {
           position: relative;
           z-index: 1;
           display: flex;
           justify-content: center;
+          align-items: center;
+          min-height: 520px;
         }
-        .landing__hero-card {
+
+        .stadium-3d-wrapper {
+          position: relative;
           width: 100%;
-          max-width: 380px;
-          border-radius: var(--radius-xl);
-          padding: var(--space-lg);
-          box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+          max-width: 580px;
+          height: 500px;
+          perspective: 900px;
         }
-        .landing__hero-card-header {
+
+        /* Ambient glow */
+        .stadium-ambient-glow {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(circle, rgba(30,136,229,0.25) 0%, rgba(0,172,193,0.12) 40%, transparent 70%);
+          border-radius: 50%;
+          filter: blur(40px);
+          animation: stadiumGlowPulse 4s ease-in-out infinite;
+          pointer-events: none;
+        }
+
+        @keyframes stadiumGlowPulse {
+          0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+          50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+        }
+
+        /* 3D Scene */
+        .stadium-3d-scene {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 320px;
+          height: 220px;
+          transform: translate(-50%, -50%) rotateX(55deg) rotateZ(-30deg);
+          transform-style: preserve-3d;
+          animation: stadiumFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes stadiumFloat {
+          0%, 100% { transform: translate(-50%, -50%) rotateX(55deg) rotateZ(-30deg) translateY(0); }
+          50% { transform: translate(-50%, -50%) rotateX(55deg) rotateZ(-30deg) translateY(-8px); }
+        }
+
+        .stadium-3d-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transform-style: preserve-3d;
+        }
+
+        /* Stadium Base */
+        .stadium-base {
+          position: absolute;
+          inset: -15px;
+          background: linear-gradient(135deg, rgba(10,22,40,0.95), rgba(15,30,55,0.9));
+          border-radius: 50%;
+          border: 2px solid rgba(30,136,229,0.2);
+          box-shadow: 
+            0 0 40px rgba(30,136,229,0.15),
+            inset 0 0 30px rgba(30,136,229,0.05);
+          transform: translateZ(-8px);
+        }
+
+        /* Stadium Field */
+        .stadium-field {
+          position: absolute;
+          top: 20%;
+          left: 15%;
+          width: 70%;
+          height: 60%;
+          background: linear-gradient(
+            180deg,
+            #1B5E20 0%, #2E7D32 12%, #1B5E20 12%, #1B5E20 25%,
+            #2E7D32 25%, #2E7D32 37%, #1B5E20 37%, #1B5E20 50%,
+            #2E7D32 50%, #2E7D32 62%, #1B5E20 62%, #1B5E20 75%,
+            #2E7D32 75%, #2E7D32 87%, #1B5E20 87%, #1B5E20 100%
+          );
+          border-radius: 4px;
+          border: 2px solid rgba(255,255,255,0.35);
+          transform: translateZ(2px);
+          box-shadow: 0 0 20px rgba(46,125,50,0.3);
+        }
+
+        .stadium-field-lines {
+          position: absolute;
+          inset: 0;
+          border: 2px solid rgba(255,255,255,0.3);
+          border-radius: 2px;
+        }
+
+        .stadium-field-center-circle {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 30%;
+          height: 40%;
+          transform: translate(-50%, -50%);
+          border: 1.5px solid rgba(255,255,255,0.3);
+          border-radius: 50%;
+        }
+
+        .stadium-field-center-line {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 1.5px;
+          height: 100%;
+          background: rgba(255,255,255,0.3);
+          transform: translateX(-50%);
+        }
+
+        .stadium-field-penalty-left {
+          position: absolute;
+          top: 25%;
+          left: 0;
+          width: 15%;
+          height: 50%;
+          border: 1.5px solid rgba(255,255,255,0.25);
+          border-left: none;
+          border-radius: 0 3px 3px 0;
+        }
+
+        .stadium-field-penalty-right {
+          position: absolute;
+          top: 25%;
+          right: 0;
+          width: 15%;
+          height: 50%;
+          border: 1.5px solid rgba(255,255,255,0.25);
+          border-right: none;
+          border-radius: 3px 0 0 3px;
+        }
+
+        /* Stadium Stands */
+        .stadium-stand {
+          position: absolute;
+          transform-style: preserve-3d;
+          overflow: hidden;
+        }
+
+        .stadium-stand--north {
+          top: -8px;
+          left: 10%;
+          width: 80%;
+          height: 28%;
+          background: linear-gradient(180deg, rgba(21,101,192,0.6), rgba(21,101,192,0.25));
+          border-radius: 80px 80px 0 0;
+          transform: translateZ(12px) rotateX(-15deg);
+          transform-origin: bottom center;
+          border: 1px solid rgba(30,136,229,0.3);
+          box-shadow: 0 -5px 20px rgba(30,136,229,0.2);
+        }
+
+        .stadium-stand--south {
+          bottom: -8px;
+          left: 10%;
+          width: 80%;
+          height: 28%;
+          background: linear-gradient(0deg, rgba(21,101,192,0.6), rgba(21,101,192,0.25));
+          border-radius: 0 0 80px 80px;
+          transform: translateZ(12px) rotateX(15deg);
+          transform-origin: top center;
+          border: 1px solid rgba(30,136,229,0.3);
+          box-shadow: 0 5px 20px rgba(30,136,229,0.2);
+        }
+
+        .stadium-stand--east {
+          top: 10%;
+          right: -8px;
+          width: 22%;
+          height: 80%;
+          background: linear-gradient(270deg, rgba(0,172,193,0.6), rgba(0,172,193,0.25));
+          border-radius: 0 60px 60px 0;
+          transform: translateZ(12px) rotateY(-15deg);
+          transform-origin: left center;
+          border: 1px solid rgba(0,172,193,0.3);
+          box-shadow: 5px 0 20px rgba(0,172,193,0.2);
+        }
+
+        .stadium-stand--west {
+          top: 10%;
+          left: -8px;
+          width: 22%;
+          height: 80%;
+          background: linear-gradient(90deg, rgba(0,172,193,0.6), rgba(0,172,193,0.25));
+          border-radius: 60px 0 0 60px;
+          transform: translateZ(12px) rotateY(15deg);
+          transform-origin: right center;
+          border: 1px solid rgba(0,172,193,0.3);
+          box-shadow: -5px 0 20px rgba(0,172,193,0.2);
+        }
+
+        /* Crowd dots */
+        .stand-crowd {
+          position: absolute;
+          inset: 0;
+        }
+
+        .crowd-dot {
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          opacity: 0.8;
+          animation: crowdPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes crowdPulse {
+          0%, 100% { opacity: 0.5; transform: scale(0.8); }
+          50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Stadium Roof */
+        .stadium-roof {
+          position: absolute;
+          inset: -20px;
+          border-radius: 50%;
+          border: 2.5px solid rgba(100,181,246,0.35);
+          transform: translateZ(22px);
+          box-shadow: 
+            0 0 15px rgba(100,181,246,0.15),
+            inset 0 0 15px rgba(100,181,246,0.05);
+          background: transparent;
+        }
+
+        /* Floodlights */
+        .floodlight {
+          position: absolute;
+          transform-style: preserve-3d;
+        }
+
+        .floodlight--1 { top: -5px; left: -5px; }
+        .floodlight--2 { top: -5px; right: -5px; }
+        .floodlight--3 { bottom: -5px; left: -5px; }
+        .floodlight--4 { bottom: -5px; right: -5px; }
+
+        .floodlight-pole {
+          width: 3px;
+          height: 12px;
+          background: linear-gradient(to top, rgba(100,181,246,0.3), rgba(100,181,246,0.8));
+          transform: translateZ(22px);
+          border-radius: 1px;
+        }
+
+        .floodlight-beam {
+          position: absolute;
+          top: -4px;
+          left: 50%;
+          transform: translateX(-50%) translateZ(28px);
+          width: 6px;
+          height: 6px;
+          background: #64B5F6;
+          border-radius: 50%;
+          box-shadow: 0 0 12px rgba(100,181,246,0.8), 0 0 30px rgba(100,181,246,0.4);
+          animation: floodlightGlow 3s ease-in-out infinite;
+        }
+
+        .floodlight--2 .floodlight-beam { animation-delay: 0.75s; }
+        .floodlight--3 .floodlight-beam { animation-delay: 1.5s; }
+        .floodlight--4 .floodlight-beam { animation-delay: 2.25s; }
+
+        @keyframes floodlightGlow {
+          0%, 100% { box-shadow: 0 0 12px rgba(100,181,246,0.8), 0 0 30px rgba(100,181,246,0.4); }
+          50% { box-shadow: 0 0 20px rgba(100,181,246,1), 0 0 50px rgba(100,181,246,0.6); }
+        }
+
+        /* Scanning Line */
+        .stadium-scan-line {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(90deg, transparent, rgba(0,172,193,0.6), rgba(30,136,229,0.8), rgba(0,172,193,0.6), transparent);
+          transform: translateZ(15px);
+          animation: scanLine 4s ease-in-out infinite;
+          border-radius: 2px;
+          box-shadow: 0 0 10px rgba(0,172,193,0.5);
+        }
+
+        @keyframes scanLine {
+          0% { top: 0; opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { top: 100%; opacity: 0; }
+        }
+
+        /* ---- Holographic Panels ---- */
+        .holo-panel {
+          position: absolute;
+          border-radius: 12px;
+          overflow: hidden;
+          animation: holoFloat 5s ease-in-out infinite;
+          z-index: 10;
+        }
+
+        .holo-panel-glow {
+          position: absolute;
+          inset: 0;
+          background: rgba(10,22,50,0.8);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(100,181,246,0.25);
+          border-radius: 12px;
+          box-shadow: 
+            0 8px 32px rgba(0,0,0,0.4),
+            inset 0 1px 0 rgba(255,255,255,0.06);
+        }
+
+        .holo-panel-glow--alert {
+          border-color: rgba(229,57,53,0.4);
+          box-shadow: 
+            0 8px 32px rgba(198,40,40,0.25),
+            inset 0 1px 0 rgba(255,255,255,0.06);
+        }
+
+        .holo-panel-content {
+          position: relative;
+          z-index: 1;
+          padding: 10px 14px;
+        }
+
+        /* Panel positions */
+        .holo-panel--header {
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          min-width: 260px;
+          animation-delay: 0s;
+        }
+
+        .holo-panel--fans {
+          top: 120px;
+          left: 0;
+          min-width: 155px;
+          animation-delay: 0.5s;
+        }
+
+        .holo-panel--density {
+          top: 100px;
+          right: 0;
+          min-width: 155px;
+          animation-delay: 1s;
+        }
+
+        .holo-panel--safety {
+          bottom: 80px;
+          right: 10px;
+          min-width: 155px;
+          animation-delay: 1.5s;
+        }
+
+        .holo-panel--alert {
+          bottom: 15px;
+          left: 50%;
+          transform: translateX(-50%);
+          min-width: 280px;
+          animation-delay: 2s;
+        }
+
+        @keyframes holoFloat {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-6px); }
+        }
+
+        .holo-panel--header {
+          animation: holoFloatCenter 5s ease-in-out infinite;
+        }
+
+        .holo-panel--alert {
+          animation: holoFloatAlert 3s ease-in-out infinite;
+        }
+
+        @keyframes holoFloatCenter {
+          0%, 100% { transform: translateX(-50%) translateY(0); }
+          50% { transform: translateX(-50%) translateY(-6px); }
+        }
+
+        @keyframes holoFloatAlert {
+          0%, 100% { transform: translateX(-50%) translateY(0); }
+          50% { transform: translateX(-50%) translateY(-4px); }
+        }
+
+        /* Holo panel content styles */
+        .holo-status-row {
           display: flex;
           align-items: center;
           gap: 8px;
-          font-size: 0.8125rem;
+        }
+
+        .holo-status-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: #43A047;
+          box-shadow: 0 0 8px #43A047;
+          animation: statusBlink 2s ease-in-out infinite;
+        }
+
+        @keyframes statusBlink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.4; }
+        }
+
+        .holo-status-text {
+          font-size: 0.75rem;
+          font-weight: 600;
           color: #90CAF9;
-          margin-bottom: 20px;
-          padding-bottom: 16px;
-          border-bottom: 1px solid rgba(255,255,255,0.08);
+          letter-spacing: 0.03em;
         }
-        .landing__hero-metric { margin-bottom: 16px; }
-        .landing__hero-metric-row {
+
+        .holo-time {
+          font-size: 0.65rem;
+          color: rgba(148,163,184,0.7);
+          margin-left: auto;
+        }
+
+        .holo-panel--header .holo-panel-content {
           display: flex;
-          justify-content: space-between;
           align-items: center;
+          justify-content: space-between;
+          gap: 16px;
         }
-        .landing__hero-alert {
+
+        .holo-metric-label {
+          font-size: 0.65rem;
+          font-weight: 500;
+          color: #64748B;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 2px;
+        }
+
+        .holo-metric-value {
+          font-size: 1.25rem;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+          margin-bottom: 6px;
+        }
+
+        .holo-metric-value--blue {
+          background: linear-gradient(135deg, #42A5F5, #1E88E5);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .holo-metric-value--amber {
+          background: linear-gradient(135deg, #FFB74D, #F57F17);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .holo-metric-value--green {
+          background: linear-gradient(135deg, #66BB6A, #2E7D32);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .holo-bar {
+          width: 100%;
+          height: 4px;
+          background: rgba(255,255,255,0.08);
+          border-radius: 4px;
+          overflow: hidden;
+        }
+
+        .holo-bar-fill {
+          height: 100%;
+          border-radius: 4px;
+          transition: width 1.5s ease;
+          position: relative;
+        }
+
+        .holo-bar-fill--blue {
+          background: linear-gradient(90deg, #1E88E5, #42A5F5);
+          box-shadow: 0 0 8px rgba(30,136,229,0.5);
+        }
+
+        .holo-bar-fill--amber {
+          background: linear-gradient(90deg, #F57F17, #FFB74D);
+          box-shadow: 0 0 8px rgba(245,127,23,0.5);
+        }
+
+        .holo-bar-fill--green {
+          background: linear-gradient(90deg, #2E7D32, #66BB6A);
+          box-shadow: 0 0 8px rgba(46,125,50,0.5);
+        }
+
+        /* Alert panel */
+        .holo-alert-content {
           display: flex;
           align-items: center;
           gap: 8px;
-          padding: 10px 12px;
-          background: rgba(198,40,40,0.12);
-          border: 1px solid rgba(198,40,40,0.2);
-          border-radius: var(--radius-md);
-          margin-top: 16px;
+        }
+
+        .holo-alert-icon {
+          font-size: 1rem;
+          animation: alertPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes alertPulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.2); }
+        }
+
+        .holo-alert-text {
+          font-size: 0.7rem;
+          font-weight: 600;
+          color: #EF9A9A;
+          letter-spacing: 0.02em;
+        }
+
+        /* Particles */
+        .stadium-particle {
+          position: absolute;
+          background: rgba(100,181,246,0.6);
+          border-radius: 50%;
+          animation: particleFloat 5s ease-in-out infinite;
+          pointer-events: none;
+          z-index: 5;
+        }
+
+        @keyframes particleFloat {
+          0% { opacity: 0; transform: translateY(0) scale(0.5); }
+          20% { opacity: 1; }
+          80% { opacity: 0.7; }
+          100% { opacity: 0; transform: translateY(-40px) scale(1.2); }
+        }
+
+        /* SVG Connection Lines */
+        .holo-connections {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 6;
+        }
+
+        .holo-line {
+          stroke: rgba(100,181,246,0.18);
+          stroke-width: 1;
+          stroke-dasharray: 6 4;
+          animation: dashFlow 3s linear infinite;
+        }
+
+        .holo-line--alert {
+          stroke: rgba(229,57,53,0.2);
+        }
+
+        @keyframes dashFlow {
+          to { stroke-dashoffset: -30; }
         }
 
         /* STATS */
@@ -507,12 +1178,23 @@ export default function Landing() {
           .landing__nav { padding: 20px 24px; }
           .landing__hero, .landing__features, .landing__cta { padding-left: 24px; padding-right: 24px; }
           .landing__footer { padding: 24px; }
+          .stadium-3d-wrapper { max-width: 480px; height: 440px; }
+          .stadium-3d-scene { width: 260px; height: 180px; }
+          .holo-panel--fans { left: -10px; }
+          .holo-panel--density { right: -10px; }
+          .holo-panel--safety { right: 0; }
         }
 
         @media (max-width: 640px) {
           .landing__stats { grid-template-columns: 1fr 1fr; }
           .landing__hero-actions { flex-direction: column; align-items: stretch; }
           .landing__nav-links a { display: none; }
+          .stadium-3d-wrapper { max-width: 360px; height: 400px; }
+          .stadium-3d-scene { width: 200px; height: 140px; }
+          .holo-panel--header { min-width: 220px; }
+          .holo-panel--alert { min-width: 240px; }
+          .holo-panel--fans, .holo-panel--density, .holo-panel--safety { min-width: 130px; }
+          .holo-connections { display: none; }
         }
       `}</style>
     </div>
