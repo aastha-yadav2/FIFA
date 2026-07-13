@@ -8,17 +8,21 @@
 
 An intelligent, real-time operations center designed to manage massive crowd operations, incident reporting, and sustainability metrics for the FIFA World Cup 2026.
 
-🔗 **[Live Demo Link](https://fifa-aa217.firebaseapp.com)** *(Note: Add live link here once deployed)*
+🔗 **[Live Demo](https://fifa-mu-pearl.vercel.app/)**
 
 ---
 
-## 📸 Screenshots & Demos
+## 📸 Screenshots
 
-| Desktop View | Mobile View |
-|---|---|
-| ![Desktop Screenshot](https://via.placeholder.com/800x450.png?text=Dashboard+Desktop+View) | ![Mobile Screenshot](https://via.placeholder.com/400x450.png?text=Dashboard+Mobile+View) |
+### 🖥️ Desktop View
 
-*Insert a GIF here showing your application in action if possible.*
+![Desktop Screenshot](./screenshots/desktop.png)
+
+### 📱 Mobile View
+
+<p align="center">
+  <img src="./screenshots/mobile.jpg" alt="Mobile Screenshot" width="320" />
+</p>
 
 ---
 
