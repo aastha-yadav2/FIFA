@@ -108,6 +108,7 @@ export default function Sidebar() {
                 onClick={handleSignOut}
                 id="btn-sign-out"
                 title="Sign out"
+                aria-label="Sign out"
               >
                 <LogOut size={16} />
               </button>
@@ -119,6 +120,7 @@ export default function Sidebar() {
               onClick={handleSignOut}
               id="btn-sign-out-collapsed"
               title="Sign out"
+              aria-label="Sign out"
             >
               <LogOut size={16} />
             </button>

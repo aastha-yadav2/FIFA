@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { RealTimeProvider } from './context/RealTimeContext';
@@ -8,19 +8,19 @@ import Sidebar from './components/Sidebar';
 import TopBar from './components/TopBar';
 
 // Pages
-import Landing          from './pages/Landing';
-import Login            from './pages/Login';
-import Dashboard        from './pages/Dashboard';
-import AIAssistant      from './pages/AIAssistant';
-import Navigation       from './pages/Navigation';
-import CrowdMonitoring  from './pages/CrowdMonitoring';
-import Accessibility    from './pages/Accessibility';
-import Transportation   from './pages/Transportation';
-import Sustainability   from './pages/Sustainability';
-import VolunteerCenter  from './pages/VolunteerCenter';
-import IncidentReporting from './pages/IncidentReporting';
-import Analytics        from './pages/Analytics';
-import Settings         from './pages/Settings';
+const Landing          = React.lazy(() => import('./pages/Landing'));
+const Login            = React.lazy(() => import('./pages/Login'));
+const Dashboard        = React.lazy(() => import('./pages/Dashboard'));
+const AIAssistant      = React.lazy(() => import('./pages/AIAssistant'));
+const Navigation       = React.lazy(() => import('./pages/Navigation'));
+const CrowdMonitoring  = React.lazy(() => import('./pages/CrowdMonitoring'));
+const Accessibility    = React.lazy(() => import('./pages/Accessibility'));
+const Transportation   = React.lazy(() => import('./pages/Transportation'));
+const Sustainability   = React.lazy(() => import('./pages/Sustainability'));
+const VolunteerCenter  = React.lazy(() => import('./pages/VolunteerCenter'));
+const IncidentReporting = React.lazy(() => import('./pages/IncidentReporting'));
+const Analytics        = React.lazy(() => import('./pages/Analytics'));
+const Settings         = React.lazy(() => import('./pages/Settings'));
 
 function AppLayout({ children }) {
   const [collapsed, setCollapsed] = useState(false);
@@ -50,71 +50,73 @@ export default function App() {
       <OperationsProvider>
         <RealTimeProvider>
           <Router>
-          <Routes>
-          {/* Public routes */}
-          <Route path="/"      element={<Landing />} />
-          <Route path="/login" element={<Login />} />
+            <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', color: 'var(--text-secondary)' }}>Loading...</div>}>
+              <Routes>
+              {/* Public routes */}
+              <Route path="/"      element={<Landing />} />
+              <Route path="/login" element={<Login />} />
 
-          {/* Protected routes */}
-          <Route path="/dashboard" element={
-            <ProtectedRoute>
-              <AppLayout><Dashboard /></AppLayout>
-            </ProtectedRoute>
-          } />
-          <Route path="/ai-assistant" element={
-            <ProtectedRoute>
-              <AppLayout><AIAssistant /></AppLayout>
-            </ProtectedRoute>
-          } />
-          <Route path="/navigation" element={
-            <ProtectedRoute>
-              <AppLayout><Navigation /></AppLayout>
-            </ProtectedRoute>
-          } />
-          <Route path="/crowd-monitoring" element={
-            <ProtectedRoute>
-              <AppLayout><CrowdMonitoring /></AppLayout>
-            </ProtectedRoute>
-          } />
-          <Route path="/accessibility" element={
-            <ProtectedRoute>
-              <AppLayout><Accessibility /></AppLayout>
-            </ProtectedRoute>
-          } />
-          <Route path="/transportation" element={
-            <ProtectedRoute>
-              <AppLayout><Transportation /></AppLayout>
-            </ProtectedRoute>
-          } />
-          <Route path="/sustainability" element={
-            <ProtectedRoute>
-              <AppLayout><Sustainability /></AppLayout>
-            </ProtectedRoute>
-          } />
-          <Route path="/volunteer-center" element={
-            <ProtectedRoute>
-              <AppLayout><VolunteerCenter /></AppLayout>
-            </ProtectedRoute>
-          } />
-          <Route path="/incident-reporting" element={
-            <ProtectedRoute>
-              <AppLayout><IncidentReporting /></AppLayout>
-            </ProtectedRoute>
-          } />
-          <Route path="/analytics" element={
-            <ProtectedRoute>
-              <AppLayout><Analytics /></AppLayout>
-            </ProtectedRoute>
-          } />
-          <Route path="/settings" element={
-            <ProtectedRoute>
-              <AppLayout><Settings /></AppLayout>
-            </ProtectedRoute>
-          } />
+              {/* Protected routes */}
+              <Route path="/dashboard" element={
+                <ProtectedRoute>
+                  <AppLayout><Dashboard /></AppLayout>
+                </ProtectedRoute>
+              } />
+              <Route path="/ai-assistant" element={
+                <ProtectedRoute>
+                  <AppLayout><AIAssistant /></AppLayout>
+                </ProtectedRoute>
+              } />
+              <Route path="/navigation" element={
+                <ProtectedRoute>
+                  <AppLayout><Navigation /></AppLayout>
+                </ProtectedRoute>
+              } />
+              <Route path="/crowd-monitoring" element={
+                <ProtectedRoute>
+                  <AppLayout><CrowdMonitoring /></AppLayout>
+                </ProtectedRoute>
+              } />
+              <Route path="/accessibility" element={
+                <ProtectedRoute>
+                  <AppLayout><Accessibility /></AppLayout>
+                </ProtectedRoute>
+              } />
+              <Route path="/transportation" element={
+                <ProtectedRoute>
+                  <AppLayout><Transportation /></AppLayout>
+                </ProtectedRoute>
+              } />
+              <Route path="/sustainability" element={
+                <ProtectedRoute>
+                  <AppLayout><Sustainability /></AppLayout>
+                </ProtectedRoute>
+              } />
+              <Route path="/volunteer-center" element={
+                <ProtectedRoute>
+                  <AppLayout><VolunteerCenter /></AppLayout>
+                </ProtectedRoute>
+              } />
+              <Route path="/incident-reporting" element={
+                <ProtectedRoute>
+                  <AppLayout><IncidentReporting /></AppLayout>
+                </ProtectedRoute>
+              } />
+              <Route path="/analytics" element={
+                <ProtectedRoute>
+                  <AppLayout><Analytics /></AppLayout>
+                </ProtectedRoute>
+              } />
+              <Route path="/settings" element={
+                <ProtectedRoute>
+                  <AppLayout><Settings /></AppLayout>
+                </ProtectedRoute>
+              } />
 
-          {/* Fallback */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+              {/* Fallback */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+            </Suspense>
           </Router>
         </RealTimeProvider>
       </OperationsProvider>

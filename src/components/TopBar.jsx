@@ -94,6 +94,7 @@ export default function TopBar({ sidebarCollapsed }) {
               type="text"
               placeholder="Search operations, incidents, volunteers…"
               id="input-global-search"
+              aria-label="Search operations, incidents, volunteers"
             />
           </div>
         </div>
