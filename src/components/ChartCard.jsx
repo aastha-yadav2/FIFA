@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function ChartCard({ title, subtitle, children, controls, className = '' }) {
   return (
@@ -56,3 +57,11 @@ export default function ChartCard({ title, subtitle, children, controls, classNa
     </div>
   );
 }
+
+ChartCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+  children: PropTypes.node,
+  controls: PropTypes.node,
+  className: PropTypes.string,
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TrendingUp, TrendingDown } from 'lucide-react';
 
 export default function KPICard({ label, value, unit = '', change, up, icon: Icon, color = 'primary', delay = 0 }) {
@@ -90,3 +91,14 @@ export default function KPICard({ label, value, unit = '', change, up, icon: Ico
     </div>
   );
 }
+
+KPICard.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  unit: PropTypes.string,
+  change: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  up: PropTypes.bool,
+  icon: PropTypes.elementType,
+  color: PropTypes.string,
+  delay: PropTypes.number,
+};
