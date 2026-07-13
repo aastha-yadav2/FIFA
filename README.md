@@ -97,10 +97,18 @@ List the software versions required before running this project:
 
 ## 🔑 Environment Variables
 
-To run this project, you will need to add the following environment variables to your `.env` file in the root directory:
+To run this project, you will need to add the following environment variables to your `.env` file in the root directory (see `.env.example`):
 
 ```env
 VITE_GEMINI_API_KEY=your_gemini_api_key_here
+
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project.firebasestorage.app
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
 ```
 
 ---

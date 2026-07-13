@@ -5,13 +5,13 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDwRzjuZJgyPPbzXM0DytswV5acxPiICNM",
-  authDomain: "fifa-aa217.firebaseapp.com",
-  projectId: "fifa-aa217",
-  storageBucket: "fifa-aa217.firebasestorage.app",
-  messagingSenderId: "375269240954",
-  appId: "1:375269240954:web:4e2a1d6314f23959ee0bc3",
-  measurementId: "G-S7GE0X399S"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 const app  = initializeApp(firebaseConfig);
